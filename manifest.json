@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube HD Video Downloader",
+    "version": "2.0",
+    "description": "Download YouTube videos in high quality with progress tracking and quality selection.",
+    "permissions": [
+      "scripting",
+      "activeTab",
+      "storage"
+    ],
+    "content_scripts": [
+      {
+        "matches": [
+          "*://www.youtube.com/watch*",
+          "*://m.youtube.com/watch*"
+        ],
+        "js": ["content.js"],
+        "css": ["styles.css"]
+      }
+    ],
+    "icons": {
+      "16": "icons/icon.png",
+      "32": "icons/icon.png",
+      "48": "icons/icon.png",
+      "128": "icons/icon.png"
+    },
+    "host_permissions": [
+      "http://localhost:5000/*"
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["icons/*.png"],
+        "matches": ["*://www.youtube.com/*"]
+      }
+    ]
+  }
